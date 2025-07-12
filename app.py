@@ -23,7 +23,7 @@ if st.button("🎵 음악 생성 및 재생"):
 
     st.success("🎶 음악이 생성되었습니다!")
 
-if st.button("🎵 음악 생성 및 재생"):
+if st.button("🎵 음악 생성 및 재생", key="generate_music_button"):
     seq = generate_fibonacci(n)
     st.write("🔢 생성된 수열:", seq)
 
@@ -35,7 +35,9 @@ if st.button("🎵 음악 생성 및 재생"):
         label="🎵 MIDI 파일 다운로드",
         data=open(midi_file, "rb").read(),
         file_name="fibonacci.mid",
-        mime="audio/midi"
+        mime="audio/midi",
+        key="download_midi_button"
     )
 
     st.success("🎶 음악이 생성되었습니다! 다운로드해서 재생해 보세요.")
+
